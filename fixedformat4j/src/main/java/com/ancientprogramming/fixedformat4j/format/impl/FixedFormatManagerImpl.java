@@ -244,9 +244,9 @@ public class FixedFormatManagerImpl implements FixedFormatManager {
         throw new ParseException(data, dataToParse, clazz, method, context, formatdata, e);
       }
     }
-    if (LOG.isDebugEnabled()) {
-      LOG.debug("the loaded data[" + loadedData + "]");
-    }
+//    if (LOG.isDebugEnabled()) {
+//      LOG.debug("the loaded data[" + loadedData + "]");
+//    }
     return loadedData;
   }
 
@@ -281,9 +281,9 @@ public class FixedFormatManagerImpl implements FixedFormatManager {
     } else {
       result = formatter.format(valueObject, formatdata);
     }
-    if (LOG.isDebugEnabled()) {
-      LOG.debug(format("exported %s ", result));
-    }
+//    if (LOG.isDebugEnabled()) {
+//      LOG.debug(format("exported %s ", result));
+//    }
     return result;
   }
 

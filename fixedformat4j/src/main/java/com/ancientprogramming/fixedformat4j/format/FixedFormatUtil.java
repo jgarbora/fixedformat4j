@@ -54,9 +54,9 @@ public class FixedFormatUtil {
       result = null;
       LOG.info(format("Could not fetch data from record as the recordlength[%s] was shorter than or equal to the requested offset[%s] of the request data. Returning null", record.length(), offset));
     }
-    if (LOG.isDebugEnabled()) {
-      LOG.debug(format("fetched '%s' from record", result));
-    }
+//    if (LOG.isDebugEnabled()) {
+//      LOG.debug(format("fetched '%s' from record", result));
+//    }
     return result;
   }
 

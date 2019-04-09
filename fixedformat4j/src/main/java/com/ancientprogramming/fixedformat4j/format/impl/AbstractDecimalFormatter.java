@@ -44,9 +44,9 @@ public abstract class AbstractDecimalFormatter<T extends Number> extends Abstrac
 
       roundedValue = value.setScale(decimals, roundingMode);
 
-      if (LOG.isDebugEnabled()) {
-        LOG.debug("Value before rounding = '" + value + "', value after rounding = '" + roundedValue + "', decimals = " + decimals + ", rounding mode = " + roundingMode);
-      }
+//      if (LOG.isDebugEnabled()) {
+//        LOG.debug("Value before rounding = '" + value + "', value after rounding = '" + roundedValue + "', decimals = " + decimals + ", rounding mode = " + roundingMode);
+//      }
     }
        
     DecimalFormat formatter = new DecimalFormat();
@@ -58,17 +58,17 @@ public abstract class AbstractDecimalFormatter<T extends Number> extends Abstrac
     String zeroString = "0" + decimalSeparator + "0";
 
     String rawString = roundedValue != null ? formatter.format(roundedValue) : zeroString;
-    if (LOG.isDebugEnabled()) {
-      LOG.debug("rawString: " + rawString + " - G[" + groupingSeparator + "] D[" + decimalSeparator + "]");
-    }
+//    if (LOG.isDebugEnabled()) {
+//      LOG.debug("rawString: " + rawString + " - G[" + groupingSeparator + "] D[" + decimalSeparator + "]");
+//    }
     rawString = rawString.replaceAll("\\" + groupingSeparator, "");
     boolean useDecimalDelimiter = instructions.getFixedFormatDecimalData().isUseDecimalDelimiter();
 
     String beforeDelimiter = rawString.substring(0, rawString.indexOf(decimalSeparator));
     String afterDelimiter = rawString.substring(rawString.indexOf(decimalSeparator)+1, rawString.length());
-    if (LOG.isDebugEnabled()) {
-      LOG.debug("beforeDelimiter[" + beforeDelimiter + "], afterDelimiter[" + afterDelimiter + "]");
-    }
+//    if (LOG.isDebugEnabled()) {
+//      LOG.debug("beforeDelimiter[" + beforeDelimiter + "], afterDelimiter[" + afterDelimiter + "]");
+//    }
 
     //trim decimals
     afterDelimiter = StringUtils.substring(afterDelimiter, 0, decimals);
@@ -76,9 +76,9 @@ public abstract class AbstractDecimalFormatter<T extends Number> extends Abstrac
 
     String delimiter = useDecimalDelimiter ? "" + instructions.getFixedFormatDecimalData().getDecimalDelimiter() : "";
     String result = beforeDelimiter + delimiter + afterDelimiter;
-    if (LOG.isDebugEnabled()) {
-      LOG.debug("result[" + result + "]");
-    }
+//    if (LOG.isDebugEnabled()) {
+//      LOG.debug("result[" + result + "]");
+//    }
     return result;
   }
  
